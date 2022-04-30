@@ -1,10 +1,15 @@
-const { app, BrowserWindow } = require("electron")
+const { app, BrowserWindow, ipcMain } = require("electron")
+const path = require("path")
 
 
 const createWindow = () => {
   const window = new BrowserWindow({
     width: 1600,
-    height: 900
+    height: 900,
+
+    webPreferences: {
+      preload: path.join(__dirname, "/preload.js")
+    }
   })
 
   window.loadFile("index.html")
@@ -13,8 +18,16 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   console.log("Hello world!")
-  createWindow()
 
+  // Pre-window setup
+  ipcMain.on("set-title", (event, text) => {
+    console.log("pols")
+    const content = event.sender //Web data that sent the request
+    const win = BrowserWindow.fromWebContents(content) //Window of that web data
+    win.setTitle(text)
+  })
+
+  createWindow()
 
   app.on("activate", () => {
     console.log("WHATTT")

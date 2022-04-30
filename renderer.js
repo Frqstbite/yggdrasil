@@ -5,4 +5,9 @@
 // selectively enable features needed in the rendering
 // process.
 
-console.log("'gergerg")
+const titleField = document.getElementById("title-field")
+const titleSubmit = document.getElementById("title-confirm")
+
+titleSubmit.addEventListener("click", () => {
+    window.shell.setTitle(titleField.value)
+})

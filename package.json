@@ -5,10 +5,15 @@
   "main": "main.js",
   "author": "Frqstbite",
   "license": "CC0-1.0",
+  "repository": "https://github.com/Frqstbite/yggdrasil",
   "scripts": {
     "start": "electron ."
   },
   "devDependencies": {
     "electron": "^18.2.0"
+  },
+  "dependencies": {
+    "create-react-app": "^5.0.1",
+    "react-electron": "0.0.0"
   }
 }
