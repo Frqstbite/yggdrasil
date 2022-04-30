@@ -1,22 +1,14 @@
 {
-  "name": "electron-quick-start",
+  "name": "yggdrasil",
   "version": "1.0.0",
   "description": "A funny Electron program to keep track of my files.",
   "main": "main.js",
+  "author": "Frqstbite",
+  "license": "CC0-1.0",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/Frqstbite/yggdrasil",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "Frqstbite",
-  "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^18.1.0"
+    "electron": "^18.2.0"
   }
 }

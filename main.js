@@ -1,3 +1,28 @@
+const { app, BrowserWindow } = require("electron")
+
+
+const createWindow = () => {
+  const window = new BrowserWindow({
+    width: 1600,
+    height: 900
+  })
+
+  window.loadFile("index.html")
+}
+
+
+app.whenReady().then(() => {
+  console.log("Hello world!")
+  createWindow()
+
+
+  app.on("activate", () => {
+    console.log("WHATTT")
+  })
+})
+
+
+/*
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
@@ -41,3 +66,4 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+*/
